@@ -1,4 +1,11 @@
 {
+  "type": "module",
+  "scripts": {
+    "dev": "vite dev",
+    "build": "vite build",
+    "preview": "vite preview",
+    "check": "svelte-check"
+  },
   "dependencies": {
     "@sveltejs/kit": "^2.55.0"
   },
