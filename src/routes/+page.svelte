@@ -1,6 +1,6 @@
 <script>
 	import Projectcard from '../lib/projectcard.svelte';
-import projectcard from '../lib/projectcard.svelte';
+
   let technologies = [
     { name: "Django", logo: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/django/django-plain.svg" },
     { name: "Flask", logo: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/flask/flask-plain.svg" },
@@ -128,7 +128,7 @@ import projectcard from '../lib/projectcard.svelte';
       <Projectcard 
         title={proj.name} 
         description={proj.description} 
-        image="{proj.image}" 
+        image={proj.image} 
         technologies={proj.technologies}
         link={proj.link} 
       />
