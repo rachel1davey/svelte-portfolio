@@ -4,6 +4,8 @@ node_modules
 .netlify
 .wrangler
 /.svelte-kit
+.svelte-kit
+.vscode
 .vercel
 .vercel/output
 
