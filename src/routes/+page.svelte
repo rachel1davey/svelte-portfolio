@@ -1,4 +1,6 @@
 <script>
+	import Projectcard from '../lib/projectcard.svelte';
+import projectcard from '../lib/projectcard.svelte';
   let technologies = [
     { name: "Django", logo: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/django/django-plain.svg" },
     { name: "Flask", logo: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/flask/flask-plain.svg" },
@@ -26,18 +28,21 @@
       name: "Hemascan",
       description: "Blood sample analysis and Triage System built with Flask. Full API and admin dashboard for managing patient data and test results. ML model for predicting sickle cell disease based on blood sample images.",
       technologies: "Flask, Tailwind CSS",
+      image: "https://via.placeholder.com/400x200.png?text=Hemascan+Project+Image",
       link: "https://example.com"
     },
     {
       name: "Moviebucket",
       description: "A personal movie tracker and recommendation system built with Django. Uses TMDB API.",
       technologies: "Django, PostgreSQL, Tailwind CSS",
+      image: "https://via.placeholder.com/400x200.png?text=Moviebucket+Project+Image",
       link: "https://example.com"
     },
     {
       name: "Customs Cafe",
       description: "A social media platform for Custom 1/6 Figures built with SvelteKit.",
       technologies: "SvelteKit, Tailwind CSS, MongoDB",
+      image: "https://via.placeholder.com/400x200.png?text=Customs+Cafe+Project+Image",
       link: "https://example.com"
     }
   ];
@@ -120,24 +125,16 @@
 
   <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
     {#each project as proj}
-      <div class="relative bg-white/20 backdrop-blur-md rounded-xl p-6 shadow-lg border border-white/10 hover:shadow-[0_0_2px_#ff00ff] hover:scale-102 transition-transform">
-        <h3 class="text-xl font-semibold text-white">{proj.name}</h3>
-        <p class="mt-2 text-slate-200 text-sm">{proj.description}</p>
-
-        <div class="mt-4 flex flex-wrap gap-2">
-          {#each proj.technologies.split(', ') as tech}
-            <span class="bg-white/30 text-white px-2 py-1 rounded-full text-xs">{tech}</span>
-          {/each}
-        </div>
-
-        <a href={proj.link} target="_blank" rel="noopener noreferrer" class="mt-4 inline-block text-sm text-white underline hover:text-cyan-300">
-          View Project
-        </a>
-      </div>
+      <Projectcard 
+        title={proj.name} 
+        description={proj.description} 
+        image="{proj.image}" 
+        technologies={proj.technologies}
+        link={proj.link} 
+      />
     {/each}
   </div>
 </section>
-
 <!-- Contact Section -->
 <section id="contact" class="space-y-6 py-16 px-6">
   <h2 class="text-3xl font-bold text-white">Contact</h2>
