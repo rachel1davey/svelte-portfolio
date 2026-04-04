@@ -11,3 +11,8 @@ declare global {
 }
 
 export {};
+
+declare module '*.jpeg' {
+	const src: string;
+	export default src;
+}
